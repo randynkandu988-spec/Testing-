@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sneaker head  | Contact</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
+body {background:#0a0a0a; color:#fff; overflow-x:hidden;}
+a {text-decoration:none; color:inherit;}
+
+/* HEADER */
+header {
+  width:100%;
+  padding:20px 50px;
+  position: fixed;
+  top:0; left:0;
+  display:flex; justify-content:space-between; align-items:center;
+  background: rgba(10,10,10,0.85);
+  z-index:1000;
+}
+header h1 {
+  font-size:28px; color:#0ff; text-shadow:0 0 10px #0ff;
+}
+nav {display:flex; gap:25px;}
+nav a {font-weight:600; color:#fff; transition:0.3s;}
+nav a:hover {color:#0ff; text-shadow:0 0 8px #0ff;}
+.menu-toggle {
+  display:none; flex-direction:column; gap:5px; cursor:pointer;
+}
+.menu-toggle div {width:25px; height:3px; background:#0ff; border-radius:2px;}
+
+/* HERO */
+.hero {
+  height:250px;
+  display:flex; justify-content:center; align-items:center; text-align:center;
+  background: linear-gradient(135deg, rgba(0,255,255,0.3), rgba(255,0,255,0.2)), url('https://via.placeholder.com/1600x400') center/cover no-repeat;
+}
+.hero h2 {
+  font-size:40px;
+  text-shadow:0 0 15px #0ff,0 0 30px #ff0,0 0 45px #f0f;
+}
+
+/* CONTACT SECTION */
+.contact-container {
+  padding:150px 50px 50px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  gap:30px;
+}
+
+.contact-card {
+  background: rgba(255,255,255,0.05);
+  border-radius:20px;
+  padding:25px;
+  text-align:center;
+  box-shadow:0 0 20px rgba(0,255,255,0.2);
+  transition:0.3s;
+}
+.contact-card:hover {
+  transform:scale(1.05);
+  box-shadow:0 0 30px #0ff,0 0 45px #ff0;
+}
+.contact-card h3 {
+  color:#0ff;
+  margin-bottom:10px;
+}
+.contact-card p {
+  color:#ccc;
+  font-size:14px;
+}
+
+/* BUTTONS */
+.contact-btn {
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 20px;
+  border-radius:12px;
+  font-weight:600;
+  background:linear-gradient(45deg,#0ff,#f0f,#ff0);
+  color:#000;
+  box-shadow:0 0 15px #0ff;
+  transition:0.3s;
+}
+.contact-btn:hover {
+  transform:scale(1.1);
+  box-shadow:0 0 25px #0ff,0 0 40px #ff0;
+}
+
+/* FOOTER */
+footer {
+  background:#111;
+  text-align:center;
+  padding:40px;
+  margin-top:50px;
+  font-size:14px;
+  text-shadow:0 0 5px #0ff;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav {
+    display:none;
+    flex-direction:column;
+    background: rgba(10,10,10,0.95);
+    position:absolute;
+    top:70px;
+    right:0;
+    width:200px;
+    padding:20px;
+    border-radius:10px;
+  }
+  nav.show {display:flex;}
+  .menu-toggle {display:flex;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Sneaker head </h1>
+<div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">
+  <div></div><div></div><div></div>
+</div>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="categories.html">Categories</a>
+  <a href="other-services.html">Other services</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+  <h2>Contact Us</h2>
+</section>
+
+<section class="contact-container">
+
+  <div class="contact-card">
+    <h3>📞 Call Us</h3>
+    <p>Available for orders & enquiries</p>
+    <a class="contact-btn" href="tel:+260976521948">260976521948</a>
+  </div>
+
+  <div class="contact-card">
+    <h3>💬 WhatsApp</h3>
+    <p>Fast replies & easy ordering</p>
+    <a class="contact-btn" href="https://wa.me/260976521948" target="_blank">Chat on WhatsApp</a>
+  </div>
+
+  <div class="contact-card">
+    <h3>📍 Location</h3>
+    <p>Lusaka, Zambia</p>
+    <p>Online-based store</p>
+  </div>
+
+</section>
+
+<footer>
+&copy; 2026 Sneaker head . All rights reserved.
+</footer>
+
+<script>
+/* CLOSE MENU ON OUTSIDE CLICK */
+document.addEventListener("click", (e) => {
+  const nav = document.querySelector("nav");
+  const toggle = document.querySelector(".menu-toggle");
+
+  if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+    nav.classList.remove("show");
+  }
+});
+
+/* CLOSE MENU WHEN LINK CLICKED */
+document.querySelectorAll("nav a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.querySelector("nav").classList.remove("show");
+  });
+});
+</script>
+
+</body>
+</html>

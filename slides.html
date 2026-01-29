@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sneaker head  | Slides</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#0a0a0a;color:#fff}
+a{text-decoration:none;color:inherit}
+
+/* HEADER */
+header{
+  position:fixed;top:0;left:0;width:100%;
+  padding:20px 50px;
+  display:flex;justify-content:space-between;align-items:center;
+  background:rgba(10,10,10,.85);z-index:1000
+}
+header h1{color:#0ff;text-shadow:0 0 10px #0ff}
+nav{display:flex;gap:25px}
+nav a:hover{color:#0ff;text-shadow:0 0 8px #0ff}
+
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.menu-toggle div{width:25px;height:3px;background:#0ff}
+
+/* HERO */
+.hero{
+  height:240px;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  background:linear-gradient(135deg,rgba(0,255,255,.3),rgba(255,0,255,.2))
+}
+.hero h2{
+  font-size:42px;
+  text-shadow:0 0 15px #0ff,0 0 30px #ff0
+}
+
+/* PRODUCTS */
+.products{
+  padding:120px 50px 50px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px
+}
+.product{
+  background:rgba(255,255,255,.05);
+  padding:20px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 0 15px rgba(0,255,255,.2);
+  transition:.3s
+}
+.product:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 25px #0ff,0 0 35px #ff0
+}
+.product img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:15px;
+  margin-bottom:15px
+}
+.product h3{color:#0ff;margin-bottom:10px}
+.product p{color:#ccc;font-size:14px;margin-bottom:15px}
+
+.buy-btn{
+  display:inline-block;
+  padding:10px 22px;
+  background:#0ff;
+  color:#000;
+  font-weight:700;
+  border-radius:25px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px;
+  background:#111;
+  margin-top:50px
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{display:none;flex-direction:column;background:#000;position:absolute;top:70px;right:0;padding:20px}
+  nav.show{display:flex}
+  .menu-toggle{display:flex}
+}
+.colors {
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin:10px 0;
+}
+.color-dot {
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  border:1px solid #444;
+}
+.red{background:#ff3b3b}
+.orange{background:#ff9f1a}
+.green{background:#2ecc71}
+.black{background:#000}
+.white{background:#fff}
+.blue{background:#3498db}
+
+.color-dot {
+  display: inline-block;      /* make it like a dot, not text */
+  width: 20px;                /* size of the dot */
+  height: 20px;
+  border-radius: 50%;         /* makes it circular */
+  margin-right: 2px;          /* spacing between dots */
+  border: 1px solid #ccc;     /* optional border for visibility */
+}
+
+/* Define each color */
+.color-dot.white { background-color: #fff; border: 1px solid #000; }
+.color-dot.black { background-color: #000; }
+.color-dot.blue { background-color: #1E90FF; }
+.color-dot.red { background-color: #FF0000; }
+.color-dot.green { background-color: #00FF00; }
+.color-dot.orange { background-color: #FFA500; }
+.color-dot.brown { background-color: #8B4513; }
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Sneaker head  </h1>
+  <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">
+    <div></div><div></div><div></div>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="categories.html">Categories</a>
+    <a href="other-services.html">Other services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Nike Air Jordan</h2>
+</section>
+
+
+
+
+<section class="products">
+
+  <!-- 1 -->
+<div class="product">
+  <img src="slides-black.jpg">
+  <h3>Nike Black Slides</h3>
+  <div class="colors">
+    <span class="color-dot black"></span>
+  </div>
+  <p>Clean everyday slides.</p>
+  <a class="buy-btn" href="https://wa.me/260976521948?text=I%20want%20Black%20Slides">Buy on WhatsApp</a>
+</div>
+
+<!-- 2 -->
+<div class="product">
+  <img src="slides-white.jpg">
+  <h3>Adidas White Slides</h3>
+  <div class="colors">
+    <span class="color-dot white"></span>
+  </div>
+  <p>Fresh minimal look.</p>
+  <a class="buy-btn" href="https://wa.me/260976521948">Buy on WhatsApp</a>
+</div>
+
+<!-- 3 -->
+<div class="product">
+  <img src="slides-blue.jpg">
+  <h3>Puma Blue Slides</h3>
+  <div class="colors">
+    <span class="color-dot blue"></span>
+  </div>
+  <p>Cool relaxed style.</p>
+  <a class="buy-btn" href="https://wa.me/260976521948">Buy on WhatsApp</a>
+</div>
+
+<!-- 4 -->
+<div class="product">
+  <img src="slides-red.jpg">
+  <h3>Jordan Red Slides</h3>
+  <div class="colors">
+    <span class="color-dot red"></span>
+  </div>
+  <p>Bold summer drip.</p>
+  <a class="buy-btn" href="https://wa.me/260976521948">Buy on WhatsApp</a>
+</div>
+
+<!-- 5 -->
+<div class="product">
+  <img src="slides-green.jpg">
+  <h3>Under Armour Green Slides</h3>
+  <div class="colors">
+    <span class="color-dot green"></span>
+  </div>
+  <p>Fresh outdoor feel.</p>
+  <a class="buy-btn" href="https://wa.me/260976521948">Buy on WhatsApp</a>
+</div>
+
+<!-- 6 -->
+<div class="product">
+  <img src="slides-orange.jpg">
+  <h3>Reebok Orange Slides</h3>
+  <div class="colors">
+    <span class="color-dot orange"></span>
+  </div>
+  <p>Bright and playful.</p>
+  <a class="buy-btn" href="https://wa.me/260976521948">Buy on WhatsApp</a>
+</div>
+
+<!-- 7 -->
+<div class="product">
+  <img src="slides-grey.jpg">
+  <h3>New Balance Grey Slides</h3>
+  <div class="colors">
+    <span class="color-dot grey"></span>
+  </div>
+  <p>Neutral everyday wear.</p>
+  <a class="buy-btn" href="https://wa.me/260976521948">Buy on WhatsApp</a>
+</div>
+
+<!-- 8 -->
+<div class="product">
+  <img src="slides-brown.jpg">
+  <h3>Puma Brown Slides</h3>
+  <div class="colors">
+    <span class="color-dot brown"></span>
+  </div>
+  <p>Earth-tone comfort.</p>
+  <a class="buy-btn" href="https://wa.me/260976521948">Buy on WhatsApp</a>
+</div>
+
+<!-- 9 -->
+<div class="product">
+  <img src="slides-pink.jpg">
+  <h3>Vans Pink Slides</h3>
+  <div class="colors">
+    <span class="color-dot pink"></span>
+  </div>
+  <p>Soft trendy look.</p>
+  <a class="buy-btn" href="https://wa.me/260976521948">Buy on WhatsApp</a>
+</div>
+
+<!-- 10 -->
+<div class="product">
+  <img src="slides-yellow.jpg">
+  <h3>Fila Yellow Slides</h3>
+  <div class="colors">
+    <span class="color-dot yellow"></span>
+  </div>
+  <p>Sunny vibes.</p>
+  <a class="buy-btn" href="https://wa.me/260976521948">Buy on WhatsApp</a>
+</div>
+
+<!-- 11 -->
+<div class="product">
+  <img src="slides-black-white.jpg">
+  <h3>Adidas Black & White Slides</h3>
+  <div class="colors">
+    <span class="color-dot black"></span>
+    <span class="color-dot white"></span>
+  </div>
+  <p>Classic combo.</p>
+  <a class="buy-btn" href="https://wa.me/260976521948">Buy on WhatsApp</a>
+</div>
+
+<!-- 12 -->
+<div class="product">
+  <img src="slides-red-black.jpg">
+  <h3>Nike Red & Black Slides</h3>
+  <div class="colors">
+    <span class="color-dot red"></span>
+    <span class="color-dot black"></span>
+  </div>
+  <p>Street-ready slides.</p>
+  <a class="buy-btn" href="https://wa.me/260976521948">Buy on WhatsApp</a>
+</div>
+
+<!-- 13 -->
+<div class="product">
+  <img src="slides-blue-white.jpg">
+  <h3>Puma Blue & White Slides</h3>
+  <div class="colors">
+    <span class="color-dot blue"></span>
+    <span class="color-dot white"></span>
+  </div>
+  <p>Clean contrast look.</p>
+  <a class="buy-btn" href="https://wa.me/260976521948">Buy on WhatsApp</a>
+</div>
+
+<!-- 14 -->
+<div class="product">
+  <img src="slides-green-black.jpg">
+  <h3>Under Armour Green & Black Slides</h3>
+  <div class="colors">
+    <span class="color-dot green"></span>
+    <span class="color-dot black"></span>
+  </div>
+  <p>Outdoor street style.</p>
+  <a class="buy-btn" href="https://wa.me/260976521948">Buy on WhatsApp</a>
+</div>
+
+<!-- 15 -->
+<div class="product">
+  <img src="slides-orange-white.jpg">
+  <h3>Reebok Orange & White Slides</h3>
+  <div class="colors">
+    <span class="color-dot orange"></span>
+    <span class="color-dot white"></span>
+  </div>
+  <p>Bright contrast drip.</p>
+  <a class="buy-btn" href="https://wa.me/260976521948">Buy on WhatsApp</a>
+</div>
+
+<!-- 16 -->
+<div class="product">
+  <img src="slides-soft.jpg">
+  <h3>Yeezy Foam Slides</h3>
+  <div class="colors">
+    <span class="color-dot grey"></span>
+  </div>
+  <p>Extra soft cushioning.</p>
+  <a class="buy-btn" href="https://wa.me/260976521948">Buy on WhatsApp</a>
+</div>
+
+<!-- 17 -->
+<div class="product">
+  <img src="slides-sport.jpg">
+  <h3>Nike Sport Slides</h3>
+  <div class="colors">
+    <span class="color-dot black"></span>
+    <span class="color-dot blue"></span>
+  </div>
+  <p>Post-game comfort.</p>
+  <a class="buy-btn" href="https://wa.me/260976521948">Buy on WhatsApp</a>
+</div>
+
+<!-- 18 -->
+<div class="product">
+  <img src="slides-classic.jpg">
+  <h3>Adidas Classic Slides</h3>
+  <div class="colors">
+    <span class="color-dot white"></span>
+  </div>
+  <p>Timeless slide design.</p>
+  <a class="buy-btn" href="https://wa.me/260976521948">Buy on WhatsApp</a>
+</div>
+
+<!-- 19 -->
+<div class="product">
+  <img src="slides-foam.jpg">
+  <h3>Crocs Foam Slides</h3>
+  <div class="colors">
+    <span class="color-dot beige"></span>
+  </div>
+  <p>Ultra-light foam feel.</p>
+  <a class="buy-btn" href="https://wa.me/260976521948">Buy on WhatsApp</a>
+</div>
+
+<!-- 20 -->
+<div class="product">
+  <img src="slides-test.jpg">
+  <h3>Mixed Brand Slides</h3>
+  <div class="colors">
+    <span class="color-dot red"></span>
+    <span class="color-dot orange"></span>
+    <span class="color-dot green"></span>
+    <span class="color-dot black"></span>
+    <span class="color-dot white"></span>
+    <span class="color-dot blue"></span>
+  </div>
+  <p>All color options.</p>
+  <a class="buy-btn" href="https://wa.me/260976521948">Buy on WhatsApp</a>
+</div>
+</section>
+<footer>
+  &copy; 2026 Sneaker head . All rights reserved.
+</footer>
+
+<script>
+document.addEventListener("click",e=>{
+  const nav=document.querySelector("nav");
+  const toggle=document.querySelector(".menu-toggle");
+  if(!nav.contains(e.target)&&!toggle.contains(e.target)){
+    nav.classList.remove("show");
+  }
+});
+</script>
+
+</body>
+</html>

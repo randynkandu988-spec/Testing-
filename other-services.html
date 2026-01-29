@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sneaker head  | Other Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#0a0a0a;color:#fff}
+a{text-decoration:none;color:inherit}
+
+/* HEADER */
+header{
+  position:fixed;top:0;left:0;width:100%;
+  padding:20px 50px;
+  display:flex;justify-content:space-between;align-items:center;
+  background:rgba(10,10,10,.85);z-index:1000
+}
+header h1{color:#0ff;text-shadow:0 0 10px #0ff}
+nav{display:flex;gap:25px}
+nav a:hover{color:#0ff;text-shadow:0 0 8px #0ff}
+
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.menu-toggle div{width:25px;height:3px;background:#0ff}
+
+/* HERO */
+.hero{
+  height:260px;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  background:linear-gradient(135deg,rgba(0,255,255,.3),rgba(255,0,255,.2))
+}
+.hero h2{
+  font-size:42px;
+  text-shadow:0 0 15px #0ff,0 0 30px #ff0
+}
+
+/* CONTENT */
+.services{
+  padding:120px 50px 50px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px
+}
+.service-card{
+  background:rgba(255,255,255,.05);
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 0 20px rgba(0,255,255,.2);
+  transition:.3s
+}
+.service-card:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 30px #0ff,0 0 45px #ff0
+}
+.service-card h3{color:#0ff;margin-bottom:10px}
+.service-card p{color:#ccc;font-size:14px}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px;
+  background:#111;
+  margin-top:50px
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav {
+    display:none;
+    flex-direction:column;
+    background: rgba(10,10,10,0.95);
+    position:absolute;
+    top:70px;
+    right:0;
+    width:200px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow: 0 0 20px rgba(0,255,255,0.3);
+  }
+
+  nav.show {
+    display:flex;
+  }
+
+  .menu-toggle {
+    display:flex;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Sneaker head </h1>
+  <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">
+    <div></div><div></div><div></div>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="categories.html">Categories</a>
+    <a href="other-services.html">Other services</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Other Services</h2>
+</section>
+
+<section class="services">
+  <div class="service-card">
+    <h3>Website Design</h3>
+    <p>Modern, fast, mobile-ready websites for brands and businesses.</p>
+  </div>
+
+  <div class="service-card">
+    <h3>Ads & Promotions</h3>
+    <p>High-converting ads for Instagram, Facebook, and WhatsApp.</p>
+  </div>
+
+  <div class="service-card">
+    <h3>Branding</h3>
+    <p>Logos, visuals, and brand identity that actually stand out.</p>
+  </div>
+
+  <div class="service-card">
+    <h3>Product Showcases</h3>
+    <p>Clean product displays and promo pages for online selling.</p>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Sneaker head . All rights reserved.
+</footer>
+
+<script>
+document.addEventListener("click",e=>{
+  const nav=document.querySelector("nav");
+  const toggle=document.querySelector(".menu-toggle");
+  if(!nav.contains(e.target)&&!toggle.contains(e.target)){
+    nav.classList.remove("show");
+  }
+});
+</script>
+
+</body>
+</html>

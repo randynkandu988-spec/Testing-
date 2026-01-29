@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sneaker head  | Categories</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
+body {background:#0a0a0a; color:#fff; overflow-x:hidden;}
+a {text-decoration:none; color:inherit;}
+
+/* HEADER */
+header {
+  width:100%;
+  padding:20px 50px;
+  position: fixed;
+  top:0; left:0;
+  display:flex; justify-content:space-between; align-items:center;
+  background: rgba(10,10,10,0.85);
+  z-index:1000;
+}
+header h1 {
+  font-size:28px; color:#0ff; text-shadow:0 0 10px #0ff;
+}
+nav {display:flex; gap:25px;}
+nav a {font-weight:600; color:#fff; transition:0.3s;}
+nav a:hover {color:#0ff; text-shadow:0 0 8px #0ff;}
+.menu-toggle {
+  display:none; flex-direction:column; gap:5px; cursor:pointer;
+}
+.menu-toggle div {width:25px; height:3px; background:#0ff; border-radius:2px; transition:0.3s;}
+
+/* HERO */
+.hero {
+  height:250px;
+  display:flex; justify-content:center; align-items:center; text-align:center;
+  background: linear-gradient(135deg, rgba(0,255,255,0.3), rgba(255,0,255,0.2)), url('https://via.placeholder.com/1600x400') center/cover no-repeat;
+}
+.hero h2 {font-size:40px; color:#fff; text-shadow:0 0 15px #0ff,0 0 30px #ff0,0 0 45px #f0f;}
+
+/* CATEGORY CARDS */
+.categories {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:30px;
+  padding:100px 50px 50px;
+}
+.category-card {
+  background: rgba(255,255,255,0.05);
+  border-radius:20px;
+  text-align:center;
+  padding:20px;
+  box-shadow:0 0 15px rgba(0,255,255,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.category-card:hover {
+  transform: scale(1.05);
+  box-shadow:0 0 25px #0ff,0 0 35px #ff0;
+}
+.category-card img {
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:15px;
+  margin-bottom:15px;
+}
+.category-card h3 {color:#0ff; margin-bottom:10px;}
+.category-card p {color:#ccc; font-size:14px;}
+
+/* FOOTER */
+footer {background:#111; color:#fff; text-align:center; padding:40px 50px; margin-top:50px; font-size:14px; text-shadow:0 0 5px #0ff;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav {display:none; flex-direction:column; background: rgba(10,10,10,0.95); position:absolute; top:70px; right:0; width:200px; padding:20px; border-radius:10px;}
+  nav.show {display:flex;}
+  .menu-toggle {display:flex;}
+}
+.category-link{
+  text-decoration:none;
+  color:inherit;
+  display:block;
+}
+
+</style>
+</head>
+<body>
+
+
+<header>
+<h1>Sneaker head </h1>
+<div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="categories.html">Categories</a>
+  <a href="other-services.html">Other services</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<h2>Shop by Category</h2>
+</section>
+
+<section id="categories" class="categories">
+
+  <a href="nike-air-force.html" class="category-link">
+    <div class="category-card">
+      <img src="running.jpg" alt="Nike Air Force">
+      <h3>Nike Air Force</h3>
+      <p>Explore the latest Nike Air Force shoes built for drip and comfort.</p>
+    </div>
+  </a>
+
+  <a href="air-jordan.html" class="category-link">
+    <div class="category-card">
+      <img src="Air Jordan.jpg" alt="Air Jordan">
+      <h3>Air Jordan</h3>
+      <p>Trendy sneakers for everyday style and comfort.</p>
+    </div>
+  </a>
+
+  <a href="slides.html" class="category-link">
+    <div class="category-card">
+      <img src="slides.jpg" alt="Slides">
+      <h3>Slides</h3>
+      <p>Easy, comfortable slides perfect for daily wear.</p>
+    </div>
+  </a>
+
+  <a href="crocs.html" class="category-link">
+    <div class="category-card">
+      <img src="crocs.jpg" alt="Crocs">
+      <h3>Crocs</h3>
+      <p>Lightweight, breathable footwear for all-day comfort.</p>
+    </div>
+  </a>
+
+  <a href="casual-shoes.html" class="category-link">
+    <div class="category-card">
+      <img src="casual shoes.jpg" alt="Casual Shoes">
+      <h3>Casual Shoes</h3>
+      <p>Stylish casual shoes for school, work, and everyday life.</p>
+    </div>
+  </a>
+
+</section>
+
+<footer>
+&copy; 2026 Sneaker head . All rights reserved.
+</footer>
+<script>
+
+/* MOBILE MENU CLOSE ON OUTSIDE CLICK */
+document.addEventListener("click", (e) => {
+  const nav = document.querySelector("nav");
+  const toggle = document.querySelector(".menu-toggle");
+
+  if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+    nav.classList.remove("show");
+  }
+});
+
+/* CLOSE MENU WHEN LINK IS CLICKED */
+document.querySelectorAll("nav a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.querySelector("nav").classList.remove("show");
+  });
+});
+</script>
+</body>
+</html>
